@@ -1,0 +1,24 @@
+{
+    "name": "deno/obfuscator",
+    "description": "A Laravel Code obfuscator package and a software license checker",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Deno\\Obfuscator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dev-chumba",
+            "email": "dchumba@devops-technology.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.0.1"
+
+    }
+}
+
+
+            
