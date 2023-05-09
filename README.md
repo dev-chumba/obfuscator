@@ -1,4 +1,4 @@
-# Optimus id transformation
+# Laravel License Checker And Obfuscator
 
 [![Packagist](https://badgen.net/packagist/v/jenssegers/optimus)](https://packagist.org/packages/deno/obfuscator)
 [![Downloads](https://badgen.net/packagist/dt/jenssegers/optimus)](https://packagist.org/packages/deno/obfuscator/stats)
@@ -29,57 +29,6 @@ apt-get install php8.0-gmp
 apt-get install php8.1-gmp
 ```
 
-## Usage
-
-To get started you will need 3 things;
-
- - Large prime number lower than `2147483647`
- - The inverse prime so that `(PRIME * INVERSE) & MAXID == 1`
- - A large random integer lower than `2147483647`
-
-Luckily for you, I have included a console command that can do all of this for you. To get started, just run the following command:
-
-```bash
-> php vendor/bin/optimus spark
-
-Prime: 2123809381
-Inverse: 1885413229
-Random: 146808189
-```
-
-If you prefer to choose your own prime number (from [this list](http://primes.utm.edu/lists/small/millions/) for example), you can pass it to the command to calculate the remaining numbers:
-
-```bash
-> php vendor/bin/optimus spark 1580030173
-
-Prime: 1580030173
-Inverse: 59260789
-Random: 1163945558
-```
-
-Using those numbers, you can start creating instances of `Optimus($prime, $inverted, $random)`:
-
-```php
-use Jenssegers\Optimus\Optimus;
-
-new Optimus(1580030173, 59260789, 1163945558);
-```
-
-**NOTE**: Make sure that you are using the same constructor values throughout your entire application!
-
-## Encoding and decoding
-
-To encode id's, use the `encode` method:
-
-```php
-$encoded = $optimus->encode(20); // 1535832388
-```
-
-To decode the resulting `1535832388` back to its original value, use the `decode` method:
-
-```php
-$original = $optimus->decode(1535832388); // 20
-```
 
 **Third-party integrations**
 
